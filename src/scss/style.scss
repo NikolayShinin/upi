@@ -1604,6 +1604,9 @@ h2 {
         @media (max-width: 767px){
             flex: 0 1 50%;
         }
+        @media (min-width: 576px){
+            margin: 0 !important;
+        }
         @media (max-width: 575px){
             flex: 0 1 100%;
             border: 1px solid #000000;
