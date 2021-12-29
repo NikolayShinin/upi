@@ -8,7 +8,7 @@ import tippy from 'tippy.js'
 
 window.addEventListener('scroll', function(){
 
-    headerScroll()
+    //headerScroll()
 
     animateTechnology()
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     burgerMenu()
 
-    headerScroll()
+    //headerScroll()
 
     accordeonInit()
 

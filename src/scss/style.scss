@@ -2,9 +2,9 @@
 @import 'old';
 @import 'fonts';
 
-body {
+.body-main-new {
     font-family: 'Inter', sans-serif;
-    background-color: #F8F9FA;
+    background: #F8F9FA !important;
 }
 
 .lock {
@@ -68,14 +68,14 @@ h2 {
     display: inline-block;
     border-radius: 3px;
     transition: all 0.5s ease;
+    font-size: 16px;
 }
 .btn-blue {
     background: #1D509B;
-    border: 1px solid #1D509B;
     color: #fff;
     &:hover {
-        background: transparent;
-        color: #1D509B;
+        background: #2D5FA9;
+        color: #fff;
     }
     &:focus {
         background: #0E428D;
@@ -88,10 +88,12 @@ h2 {
     border: 1px solid #1D509B;
     color: #000000;
     &:hover {
+        border: 1px solid #2D5FA9;
         background: #2D5FA9;
         color: #FFFFFF;
     }
     &:focus {
+        border: 1px solid #0E428D;
         background: #0E428D;
         color: #FFFFFF;
     }
@@ -157,7 +159,7 @@ h2 {
 }
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
@@ -397,6 +399,7 @@ h2 {
 
     &__title {
         margin: 0px 0px 25px 0px;
+        font-family: 'Bebas Neue Pro';
         font-weight: bold;
         font-size: 78px;
         line-height: 120%;
@@ -1012,7 +1015,7 @@ h2 {
         }
         @media (max-width: 991px){
             width: 100%;
-            padding: 20px;
+            padding: 20px 20px 40px;
         }
         @media (max-width: 676px){
             width: calc(100% + 30px);
@@ -1239,10 +1242,12 @@ h2 {
             @media (max-width: 991px){
                 position: static;
                 padding: 0px 20px 0px 0px;
+                font-size: 20px;
             }
         }
         @media (max-width: 991px){
             padding: 0px 0px 20px 0px;
+            font-size: 20px;
         }
     }
 
@@ -1271,6 +1276,9 @@ h2 {
         font-size: 16px;
         line-height: 120%;
         color: #FFFFFF;
+        a {
+            color: inherit;
+        }
         &:not(:last-child){
             margin: 0px 0px 15px 0px;
         }
@@ -1430,6 +1438,9 @@ h2 {
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
     box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 5px;
+    @media (max-width: 767px){
+        padding: 40px 0px 20px;
+    }
     // .technology-raiting__info
 
     &__info {
@@ -1441,6 +1452,7 @@ h2 {
             flex-direction: column;
             align-items: stretch;
             padding: 0px 15px;
+            margin: -20px 0px 0px;
         }
         span {
             @media (max-width: 767px){
@@ -1472,6 +1484,9 @@ h2 {
     @media (max-width: 767px){
         justify-content: stretch;
         padding: 10px 15px;
+        &:last-child {
+            margin: 0px 0px 20px 0px;
+        }
     }
     &:not(:last-child){
         margin: 0px 0px 15px 0px;
@@ -1496,7 +1511,7 @@ h2 {
             padding: 10px 15px;
             p {
                 position: absolute;
-                top: -20px;
+                top: -25px;
                 left: 15px;
                 width: 90vw;
                 color: #000000;
@@ -1519,6 +1534,7 @@ h2 {
         flex: 0 0 25px;
         margin: 0px 12px 0px 0px;
     }
+    
 }
 
 
@@ -1532,6 +1548,9 @@ h2 {
         justify-content: space-between;
         align-items: center;
         margin: 0px 0px 40px 0px;
+        @media (max-width: 991px){
+            margin: 0px 0px 20px 0px;
+        }
     }
 
     // .portfolio__title
@@ -1661,6 +1680,9 @@ h2 {
         justify-content: space-between;
         align-items: center;
         margin: 0px 0px 40px 0px;
+        @media (max-width: 767px){
+            margin: 0px 0px 20px 0px;
+        }
     }
 
     // .news__title
@@ -2206,3 +2228,4 @@ h2 {
         }
     }
 }
+input, button { -webkit-appearance: none;}
