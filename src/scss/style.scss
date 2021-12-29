@@ -1610,6 +1610,9 @@ h2 {
             &:not(:last-child){
                 margin: 0px 0px 20px 0px;
             }
+            &:nth-child(n + 4) {
+                display: none;
+            }
         }
     }
 }
