@@ -168,6 +168,9 @@ button[type="submit"]:not(.w-btn).btn-white, .btn-white {
     align-items: center;
     transition: all 0.5s ease;
     border-bottom: 1px solid #FFFFFF;
+    @media (max-width: 991px){
+        border: 0;
+    }
     &.scroll-hedaer {
         background: #F8F9FA;
         box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
@@ -1827,7 +1830,7 @@ button[type="submit"]:not(.w-btn).btn-white, .btn-white {
         @media (max-width: 991px){
             top: initial;
             right: 10px;
-            bottom: 110px;
+            bottom: 40px;
         }
     }
 
