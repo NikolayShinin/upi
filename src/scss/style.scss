@@ -71,31 +71,31 @@ h2 {
     font-size: 16px;
 }
 .btn-blue {
-    background: #1D509B;
-    color: #fff;
+    background: #1D509B !important;
+    color: #fff !important;
     &:hover {
-        background: #2D5FA9;
-        color: #fff;
+        background: #2c2e31 !important;
+        color: #fff !important;
     }
     &:focus {
-        background: #0E428D;
-        color: #FFFFFF;
+        background: #0E428D !important;
+        color: #FFFFFF !important;
     }
 }
 
 .btn-white {
-    background: white;
-    border: 1px solid #1D509B;
-    color: #000000;
+    background: white !important;
+    border: 1px solid #1D509B !important;
+    color: #000000 !important;
     &:hover {
-        border: 1px solid #2D5FA9;
-        background: #2D5FA9;
-        color: #FFFFFF;
+        border: 1px solid #2D5FA9 !important;
+        background: #2D5FA9 !important;
+        color: #FFFFFF !important;
     }
     &:focus {
-        border: 1px solid #0E428D;
-        background: #0E428D;
-        color: #FFFFFF;
+        border: 1px solid #0E428D !important;
+        background: #0E428D !important;
+        color: #FFFFFF !important;
     }
 }
 
@@ -1114,7 +1114,7 @@ h2 {
     &__btn {
         margin: 30px 0px 0px 0px;
         width: 100%;
-        padding: 15px 0px;
+        padding: 15px 0px !important;
     }
 
     // .callback-calc__label
