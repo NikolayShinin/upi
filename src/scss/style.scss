@@ -61,7 +61,7 @@ h2 {
 	padding: 0px 0px 130px 0px;
 }
 
-.btn {
+button[type="submit"]:not(.w-btn).btn, .btn {
     // display: flex;
     // align-items: center;
     // justify-content: center;
@@ -70,7 +70,7 @@ h2 {
     transition: all 0.5s ease;
     font-size: 16px;
 }
-.btn-blue {
+button[type="submit"]:not(.w-btn).btn-blue, .btn-blue {
     background: #1D509B !important;
     color: #fff !important;
     &:hover {
@@ -83,7 +83,7 @@ h2 {
     }
 }
 
-.btn-white {
+button[type="submit"]:not(.w-btn).btn-white, .btn-white {
     background: white !important;
     border: 1px solid #1D509B !important;
     color: #000000 !important;
