@@ -44,7 +44,6 @@ function insert(str, substr, pos) {
 // });
 
 module.exports = {
-    watch: true,
     devServer: {
         port: 3000,
         static: {
@@ -65,12 +64,12 @@ module.exports = {
                     name(module) {
                         if (isDev) {
                             if (module._identifier) {
-                                const indexStr = module._identifier.indexOf('!');
-                                const indexModules = module._identifier.substr(indexStr + 1).lastIndexOf('node_modules')
-                                const path = module._identifier.substr(indexStr + 1).substr(indexModules + 13)
-                                const indexPath = path.indexOf('/')
-                                const pathNew = path.substr(0, indexPath)
-                                return `vendor/${pathNew}/${pathNew.replace('.', '')}`;
+                                // const indexStr = module._identifier.indexOf('!');
+                                // const indexModules = module._identifier.substr(indexStr + 1).lastIndexOf('node_modules')
+                                // const path = module._identifier.substr(indexStr + 1).substr(indexModules + 13)
+                                // const indexPath = path.indexOf('/')
+                                // const pathNew = path.substr(0, indexPath)
+                                // return `vendor/${pathNew}/${pathNew.replace('.', '')}`;
                             } else {
                                 const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
                                 return `vendor/${packageName.replace('@', '')}/${packageName.replace('@', '').replace('.', '')}`;

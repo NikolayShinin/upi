@@ -3,8 +3,6 @@
 import '../scss/style.scss';
 import '../scss/lib.scss';
 //js libs
-import swiper from 'swiper';
-import tippy from 'tippy.js'
 
 window.addEventListener('scroll', function(){
 
