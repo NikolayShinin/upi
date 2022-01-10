@@ -69,3 +69,21 @@ let technicSlider = new Swiper('.technic__list', {
         }
     }
 })
+
+let mapSlider = new Swiper('.map-slider__body', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+        nextEl: ".map-slider__arrow-next",
+        prevEl: ".map-slider__arrow-prev",
+    },
+    // breakpoints: {
+    //     992: {
+    //         slidesPerView: 3,
+    //     },
+    //     768: {
+    //         slidesPerView: 2,
+    //     }
+    // }
+})
