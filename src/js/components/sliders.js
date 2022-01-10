@@ -81,19 +81,12 @@ let mapSlider = new Swiper('.map-slider__body', {
     pagination: {
         el: '.map-slider-pagination',
         clickable: true,
-        //dynamicBullets: true,
         renderBullet: function (index, className) {
-            const path = document.querySelectorAll('.map-slider-pagination g')[index]
+            const path = document.querySelectorAll('.map-slider-pagination a')[index]
             path.classList.add(className)
             return path.outerHTML
         }
     }
-    // breakpoints: {
-    //     992: {
-    //         slidesPerView: 3,
-    //     },
-    //     768: {
-    //         slidesPerView: 2,
-    //     }
-    // }
 })
+
+window.mapSliderPagination = mapSlider.pagination.$el[0].childNodes;
