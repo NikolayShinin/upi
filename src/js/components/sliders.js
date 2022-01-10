@@ -78,6 +78,16 @@ let mapSlider = new Swiper('.map-slider__body', {
         nextEl: ".map-slider__arrow-next",
         prevEl: ".map-slider__arrow-prev",
     },
+    pagination: {
+        el: '.map-slider-pagination',
+        clickable: true,
+        //dynamicBullets: true,
+        renderBullet: function (index, className) {
+            const path = document.querySelectorAll('.map-slider-pagination g')[index]
+            path.classList.add(className)
+            return path.outerHTML
+        }
+    }
     // breakpoints: {
     //     992: {
     //         slidesPerView: 3,

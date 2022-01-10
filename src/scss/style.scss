@@ -2316,7 +2316,7 @@ input, button { -webkit-appearance: none;}
         position: absolute;
         top: 50%;
         right: 0;
-        z-index: -1;
+        // z-index: -1;
         transform: translate(0, -50%);
         width: 50%;
         svg {
@@ -2408,5 +2408,11 @@ input, button { -webkit-appearance: none;}
         line-height: 150%;
         color: #000000;
         opacity: 0.6;
+    }
+}
+
+.map-slider-pagination {
+    g {
+        transition: all 0.5s ease;
     }
 }
