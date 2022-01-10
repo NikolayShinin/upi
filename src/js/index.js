@@ -46,12 +46,13 @@ function hoverServiceItem() {
 function animateTechnology() {
     const technology = document.querySelector('.technology');
     const progressBars = document.querySelectorAll('.technology-progress-bar span');
-
-    if (window.pageYOffset > technology.offsetTop + window.innerHeight * 0.6 ) {
-        progressBars.forEach(function (progressBar) {
-            const width = progressBar.getAttribute('data-width')
-            progressBar.style.width = width + '%'
-        })
+    if(technology){
+        if (window.pageYOffset > technology.offsetTop + window.innerHeight * 0.6 ) {
+            progressBars.forEach(function (progressBar) {
+                const width = progressBar.getAttribute('data-width')
+                progressBar.style.width = width + '%'
+            })
+        }
     }
 }
 
@@ -118,18 +119,20 @@ function burgerMenu() {
     const body = document.querySelector('body')
     const burger = document.querySelector('.header-burger')
     const menu = document.querySelector('.header__menu')
+    if(burger){
+        burger.addEventListener('click', (event)=> {
+            if (burger.classList.contains('active')) {
+                body.classList.remove('lock')
+                burger.classList.remove('active')
+                menu.classList.remove('active')
+            } else {
+                body.classList.add('lock')
+                burger.classList.add('active')
+                menu.classList.add('active')
+            }
+        })
+    }
 
-    burger.addEventListener('click', (event)=> {
-        if (burger.classList.contains('active')) {
-            body.classList.remove('lock')
-            burger.classList.remove('active')
-            menu.classList.remove('active')
-        } else {
-            body.classList.add('lock')
-            burger.classList.add('active')
-            menu.classList.add('active')
-        }
-    })
 
     const linkAcordeon = document.querySelectorAll('.header__item svg')
     

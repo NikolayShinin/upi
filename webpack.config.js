@@ -10,7 +10,8 @@ const webpack = require('webpack');
 const  HtmlWebpackExternalsPlugin  =  require ( 'html-webpack-externals-plugin' );
 const { default: components } = require('./src/js/components');
 const loader = require('sass-loader');
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
+const isDev = 'production';
 
 // const HTMLS = glob.sync('*.html', {
 //     matchBase: true,
@@ -50,7 +51,7 @@ module.exports = {
             directory: path.join(__dirname, 'src'),
         },
     },
-    mode: 'development',
+    mode: isDev,
     devtool: "inline-source-map",
     optimization: {
         //runtimeChunk: 'single',
