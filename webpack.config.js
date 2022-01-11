@@ -65,6 +65,7 @@ module.exports = {
                     name(module) {
                         if (isDev) {
                             if (module._identifier) {
+                                return 'vendors'
                                 // const indexStr = module._identifier.indexOf('!');
                                 // const indexModules = module._identifier.substr(indexStr + 1).lastIndexOf('node_modules')
                                 // const path = module._identifier.substr(indexStr + 1).substr(indexModules + 13)
