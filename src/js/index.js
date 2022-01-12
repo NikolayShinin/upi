@@ -3,9 +3,12 @@
 import '../scss/style.scss';
 import '../scss/lib.scss';
 //js libs
-import { Fancybox } from "@fancyapps/ui";
+// import $ from 'jquery';
+// window.$ = window.jQuery = $;
+// require("@fancyapps/fancybox");
 
-window.Fancybox = Fancybox;
+var $ = require('jquery');
+require('fancybox')($); 
 
 window.addEventListener('scroll', function(){
 
@@ -34,37 +37,32 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function initMap() {
+
     const links = document.querySelectorAll('.map__wrapper svg a')
     
     links.forEach((link)=> {
         link.addEventListener('click', (event)=> {
-            event.preventDefault()
-            const fancyboxMap = Fancybox.show([
-                {
-                    src: "<div id='map-init'></div>",
-                    type: "html",
-                }
-            ], {
-                mainClass: "map-fancybox",
-                dragToClose: false,
-                touch: true
+            event.preventDefault();
+            $.fancybox.open('<div id="map-init"></div>', {
+                width: "100%",
+                height: "100%",
+                autoSize: false,
+                scrolling: false,
+                padding: 0
             });
-            fancyboxMap.on("done", (fancybox, slide) => {
+            $(document).on('afterShow.fb', function( e, instance, slide ) {
                 ymaps.ready(init);
                 function init(){
-                    // Создание карты.
                     var myMap = new ymaps.Map("map-init", {
-                        // Координаты центра карты.
-                        // Порядок по умолчанию: «широта, долгота».
-                        // Чтобы не определять координаты центра карты вручную,
-                        // воспользуйтесь инструментом Определение координат.
                         center: [55.76, 37.64],
-                        // Уровень масштабирования. Допустимые значения:
-                        // от 0 (весь мир) до 19.
-                        zoom: 7
+                        zoom: 7,
+                        behaviors: ["scrollZoom","drag"]
                     });
                 }
-            })
+            });       
+            $(document).on('afterclose.fb', function( e, instance, slide ) {
+                myMap.destroy();
+            });        
         })
     });
 }
