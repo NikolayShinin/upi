@@ -45,6 +45,11 @@ function insert(str, substr, pos) {
 // });
 
 module.exports = {
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     devServer: {
         port: 3000,
         static: {
@@ -214,13 +219,13 @@ module.exports = {
                     'sass-loader'
                 ]
             },
-            {
-                test: /\.html$/,
-                loader: "raw-loader"
-            },
-            {
-                test: /\.html$/,
-            }
+            // {
+            //     test: /\.html$/,
+            //     loader: "raw-loader"
+            // },
+            // {
+            //     test: /\.html$/,
+            // }
         ]
     }
 }

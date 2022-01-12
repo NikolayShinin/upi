@@ -3,6 +3,9 @@
 import '../scss/style.scss';
 import '../scss/lib.scss';
 //js libs
+import { Fancybox } from "@fancyapps/ui";
+
+window.Fancybox = Fancybox;
 
 window.addEventListener('scroll', function(){
 
@@ -26,7 +29,41 @@ document.addEventListener('DOMContentLoaded', function(){
 
     hoverServiceItem()
 
+    initMap()
+
 });
+
+function initMap() {
+    // const links = document.querySelectorAll('.map__wrapper svg a')
+    
+    // links.forEach((link)=> {
+    //     link.addEventListener('click', (event)=> {
+    //         event.preventDefault()
+    //         window.fancyboxMap = Fancybox.show([
+    //             {
+    //                 src: "<div id='map-init'></div>",
+    //                 type: "html",
+    //             }
+    //         ]);
+    //     })
+    // });
+    // fancyboxMap.on("done", (fancybox, slide) => {
+    //     console.log(`done!`);
+    // });
+    const map = Fancybox.bind(".map__wrapper svg a", {
+        Html: {
+            tpl: `<div id='map-init'></div>`,
+            format: "",
+        },
+		on : {
+            done : (fancybox) => {
+                console.log(fancybox.$container.querySelector('.fancybox__content'));
+                //fancybox.$container.querySelector('.fancybox__content').textContent = ''
+		    }
+		}
+	});
+    console.log(map);
+}
 
 function hoverServiceItem() {
     const services = document.querySelectorAll('.service-item')

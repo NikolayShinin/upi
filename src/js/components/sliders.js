@@ -79,10 +79,10 @@ let mapSlider = new Swiper('.map-slider__body', {
         prevEl: ".map-slider__arrow-prev",
     },
     pagination: {
-        el: '.map-slider-pagination',
+        el: '.map__dots',
         clickable: true,
         renderBullet: function (index, className) {
-            const path = document.querySelectorAll('.map-slider-pagination a')[index]
+            const path = document.querySelectorAll('.map__dot')[index];
             path.classList.add(className)
             return path.outerHTML
         }
