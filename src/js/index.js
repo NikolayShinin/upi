@@ -34,35 +34,39 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function initMap() {
-    // const links = document.querySelectorAll('.map__wrapper svg a')
+    const links = document.querySelectorAll('.map__wrapper svg a')
     
-    // links.forEach((link)=> {
-    //     link.addEventListener('click', (event)=> {
-    //         event.preventDefault()
-    //         window.fancyboxMap = Fancybox.show([
-    //             {
-    //                 src: "<div id='map-init'></div>",
-    //                 type: "html",
-    //             }
-    //         ]);
-    //     })
-    // });
-    // fancyboxMap.on("done", (fancybox, slide) => {
-    //     console.log(`done!`);
-    // });
-    const map = Fancybox.bind(".map__wrapper svg a", {
-        Html: {
-            tpl: `<div id='map-init'></div>`,
-            format: "",
-        },
-		on : {
-            done : (fancybox) => {
-                console.log(fancybox.$container.querySelector('.fancybox__content'));
-                //fancybox.$container.querySelector('.fancybox__content').textContent = ''
-		    }
-		}
-	});
-    console.log(map);
+    links.forEach((link)=> {
+        link.addEventListener('click', (event)=> {
+            event.preventDefault()
+            const fancyboxMap = Fancybox.show([
+                {
+                    src: "<div id='map-init'></div>",
+                    type: "html",
+                }
+            ], {
+                mainClass: "map-fancybox",
+                dragToClose: false,
+                touch: true
+            });
+            fancyboxMap.on("done", (fancybox, slide) => {
+                ymaps.ready(init);
+                function init(){
+                    // Создание карты.
+                    var myMap = new ymaps.Map("map-init", {
+                        // Координаты центра карты.
+                        // Порядок по умолчанию: «широта, долгота».
+                        // Чтобы не определять координаты центра карты вручную,
+                        // воспользуйтесь инструментом Определение координат.
+                        center: [55.76, 37.64],
+                        // Уровень масштабирования. Допустимые значения:
+                        // от 0 (весь мир) до 19.
+                        zoom: 7
+                    });
+                }
+            })
+        })
+    });
 }
 
 function hoverServiceItem() {
