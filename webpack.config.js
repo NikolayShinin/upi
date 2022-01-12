@@ -47,8 +47,8 @@ function insert(str, substr, pos) {
 module.exports = {
     performance: {
         hints: false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
+        // maxEntrypointSize: 512000,
+        // maxAssetSize: 512000
     },
     devServer: {
         port: 3000,
@@ -59,6 +59,7 @@ module.exports = {
     mode: isDev,
     devtool: "inline-source-map",
     optimization: {
+        minimize: false,
         //runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all',
