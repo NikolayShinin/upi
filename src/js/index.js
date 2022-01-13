@@ -2,11 +2,13 @@
 //scss
 import '../scss/style.scss';
 import '../scss/lib.scss';
+import jquery from 'jquery';
 //js libs
 // import $ from 'jquery';
 // window.$ = window.jQuery = $;
 // require("@fancyapps/fancybox");
 
+window.$ = jQuery;
 var $ = require('jquery');
 require('fancybox')($); 
 
@@ -32,9 +34,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
     hoverServiceItem()
 
-    initMap()
-
 });
+
+jQuery(document).ready(function ($) {
+    initMap()
+})
+
 
 function initMap() {
 
