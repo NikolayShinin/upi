@@ -10,8 +10,8 @@ const webpack = require('webpack');
 const  HtmlWebpackExternalsPlugin  =  require ( 'html-webpack-externals-plugin' );
 const { default: components } = require('./src/js/components');
 const loader = require('sass-loader');
-// const isDev = process.env.NODE_ENV === 'development'
-const isDev = 'production';
+const isDev = process.env.NODE_ENV === 'development'
+//const isDev = 'production';
 
 // const HTMLS = glob.sync('*.html', {
 //     matchBase: true,
@@ -82,6 +82,8 @@ module.exports = {
                                 const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
                                 return `vendor/${packageName.replace('@', '')}/${packageName.replace('@', '').replace('.', '')}`;
                             } 
+                        } else {
+                            return 'vendors'
                         }
                     },
                 },
