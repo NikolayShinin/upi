@@ -9,7 +9,7 @@ import '../scss/lib.scss';
 // require("@fancyapps/fancybox");
 
 // window.$ = require('jquery');
-require('fancybox'); 
+//require('fancybox'); 
 
 window.addEventListener('scroll', function(){
 
