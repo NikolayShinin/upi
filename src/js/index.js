@@ -7,6 +7,9 @@ import '../scss/lib.scss';
 // window.$ = window.jQuery = $;
 // require("@fancyapps/fancybox");
 
+import { Flip } from 'number-flip'
+window.Flip = Flip
+
 var $ = require('jquery');
 require('fancybox')($); 
 
