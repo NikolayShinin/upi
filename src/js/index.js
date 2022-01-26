@@ -3,15 +3,7 @@
 import '../scss/style.scss';
 import '../scss/lib.scss';
 //js libs
-// import $ from 'jquery';
-// window.$ = window.jQuery = $;
-// require("@fancyapps/fancybox");
-
-import { Flip } from 'number-flip'
-window.Flip = Flip
-
-var $ = require('jquery');
-require('fancybox')($); 
+import './lib';
 
 window.addEventListener('scroll', function(){
 
@@ -36,42 +28,6 @@ document.addEventListener('DOMContentLoaded', function(){
     hoverServiceItem()
 
 });
-
-jQuery(document).ready(function ($) {
-    initMap()
-})
-
-
-function initMap() {
-
-    const links = document.querySelectorAll('.map__wrapper svg a')
-    
-    links.forEach((link)=> {
-        link.addEventListener('click', (event)=> {
-            event.preventDefault();
-            $.fancybox.open('<div id="map-init"></div>', {
-                width: "100%",
-                height: "100%",
-                autoSize: false,
-                scrolling: false,
-                padding: 0
-            });
-            $(document).on('afterShow.fb', function( e, instance, slide ) {
-                ymaps.ready(init);
-                function init(){
-                    var myMap = new ymaps.Map("map-init", {
-                        center: [55.76, 37.64],
-                        zoom: 7,
-                        behaviors: ["scrollZoom","drag"]
-                    });
-                }
-            });       
-            $(document).on('afterclose.fb', function( e, instance, slide ) {
-                myMap.destroy();
-            });        
-        })
-    });
-}
 
 function hoverServiceItem() {
     const services = document.querySelectorAll('.service-item')

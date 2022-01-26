@@ -11,7 +11,7 @@ const  HtmlWebpackExternalsPlugin  =  require ( 'html-webpack-externals-plugin' 
 const { default: components } = require('./src/js/components');
 const loader = require('sass-loader');
 const isDev = process.env.NODE_ENV === 'development'
-//const isDev = 'production';
+// const isDev = false;
 
 // const HTMLS = glob.sync('*.html', {
 //     matchBase: true,
@@ -56,7 +56,7 @@ module.exports = {
             directory: path.join(__dirname, 'src'),
         },
     },
-    mode: isDev,
+    mode: process.env.NODE_ENV,
     devtool: "inline-source-map",
     optimization: {
         minimize: false,
